@@ -1,0 +1,273 @@
+/* ============== STACKED ALBUM ============== */
+/* {% stackalbum %} / {% stackalbumnav %} — a deck of photos stacked like
+   playing cards. Markup comes from scripts/stackalbum.js, behaviour from
+   main.js's initStackAlbums().
+
+   Two states, and the unstacked one is what ships in the HTML: cards are
+   ordinary blocks and every photo is visible, so a reader without JS gets the
+   whole album as a plain image list. main.js adds `is-stacked` to switch to
+   the deck, which is the only state that positions cards absolutely. */
+
+.fp-stack {
+  /* Card footprints per orientation. The modifier below only picks one of
+     these pairs, so the nav variant restates the numbers and nothing else. */
+  --fp-card-h-w: 480px;
+  --fp-card-h-h: 320px;
+  --fp-card-v-w: 320px;
+  --fp-card-v-h: 480px;
+  width: var(--fp-stack-w, 480px);
+  max-width: 100%;
+  margin: 1.6em auto;
+}
+
+.fp-stack--nav {
+  --fp-card-h-w: 160px;
+  --fp-card-h-h: 107px;
+  --fp-card-v-w: 120px;
+  --fp-card-v-h: 160px;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.fp-stack__card {
+  display: block;
+  position: relative;
+}
+
+.fp-stack__card + .fp-stack__card {
+  margin-top: 10px;
+}
+
+.fp-stack__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+/* The photo frame, restated at a specificity that can win.
+   `.article-content img` (_page/article.styl) styles prose images for the
+   whole theme: border-radius 0, no shadow, and a hover that shifts the image
+   by 5px. It is (0,1,1) and imported after this file, so the rule above can
+   reach neither the radius nor the shadow — and the prose hover would slide a
+   photo inside its own card, which is not what a deck of photos should do.
+   Cancelling it here keeps the frame in one place instead of spreading it
+   across both states. */
+.fp-stack .fp-stack__img,
+.fp-stack .fp-stack__img:hover {
+  border-radius: 10px;
+  box-shadow: var(--paper-shadow);
+  transform: none;
+}
+
+/* ---- Deck ---- */
+
+.fp-stack.is-stacked {
+  position: relative;
+  height: var(--fp-stack-h, 480px);
+}
+
+/* The pile fans out downwards only: its lowest card ends flush with the
+   deck's box while the top has slack, and the blurred photos and their
+   shadows spill a little further. The prose block margin (15px) is not
+   enough to keep the following text clear of that, so the article deck
+   gets a deeper bottom margin, roughly matching the room above it. */
+.article-content .fp-stack.is-stacked:not(.fp-stack--nav) {
+  margin-bottom: 48px;
+}
+
+/* The top card is the click target, but the container carries the keyboard
+   affordance (main.js gives it tabindex), so the focus ring belongs here — and
+   it has to be drawn explicitly: the cards overflow the container, and a UA
+   outline hugging the box alone reads as unrelated to the photos. */
+.fp-stack.is-stacked:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+.fp-stack.is-stacked .fp-stack__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--fp-card-v-w);
+  height: var(--fp-card-v-h);
+  margin: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  /* Where layout() puts a card before fanning it out. Without it a card
+     starts with its corner on the deck's centre, i.e. down and to the right
+     of where it belongs. */
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Cards animate only once the deck has been laid out (main.js adds
+   `is-ready` after the first layout, and drops it again while a late image
+   settles its orientation). Before that, every card would visibly slide in
+   from the bottom right and morph to its size on each page load. */
+.fp-stack.is-stacked.is-ready .fp-stack__card {
+  transition: transform 0.38s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.fp-stack.is-stacked .fp-stack__card--h {
+  width: var(--fp-card-h-w);
+  height: var(--fp-card-h-h);
+}
+
+.fp-stack.is-stacked .fp-stack__card--v {
+  width: var(--fp-card-v-w);
+  height: var(--fp-card-v-h);
+}
+
+/* Only the article deck is clickable — the nav deck is driven by its title
+   list, so a pointer cursor there would promise an interaction it lacks. */
+.fp-stack.is-stacked:not(.fp-stack--nav) .fp-stack__card.is-top {
+  cursor: pointer;
+}
+
+.fp-stack.is-stacked .fp-stack__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px) saturate(0.85);
+}
+
+.fp-stack.is-stacked.is-ready .fp-stack__img {
+  transition: transform 0.38s ease, filter 0.3s ease;
+}
+
+.fp-stack--nav.is-stacked .fp-stack__img {
+  filter: blur(2.5px) saturate(0.85);
+}
+
+/* The top photo is the only sharp one, and the deeper shadow is what lifts it
+   clear of the blurred pile rather than sitting flush against it. */
+.fp-stack.is-stacked .fp-stack__card.is-top .fp-stack__img {
+  filter: none;
+  box-shadow: var(--small-shadow);
+}
+
+.fp-stack.is-stacked:not(.fp-stack--nav) .fp-stack__card.is-top:hover .fp-stack__img {
+  filter: brightness(1.05);
+}
+
+/* The lift, before the card drops to the back of the pile. */
+.fp-stack.is-stacked .fp-stack__card.is-taking {
+  z-index: 9999;
+  transition: transform 0.26s ease;
+}
+
+.fp-stack.is-stacked .fp-stack__card.is-taking .fp-stack__img {
+  filter: none;
+  box-shadow: var(--shadow);
+  transition: transform 0.26s ease, filter 0.3s ease;
+}
+
+/* ---- Nav variant: deck + title list ---- */
+
+/* Titles on the left, the deck they drive on the right, pushed to the two
+   edges of the column. */
+.fp-stacknav {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 1.6em 0;
+}
+
+/* The article stylesheet styles lists inside .article-content, so the reset
+   has to be specific enough to win against it. */
+.article-content .fp-stacknav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A row: the theme's tilted-square marker, then the title. */
+.article-content .fp-stacknav__list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 5px 8px;
+  line-height: 1.7;
+}
+
+.fp-stacknav__list li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-handdrawn);
+  background: var(--color-accent);
+  transform: rotate(-10deg);
+  transition: transform 0.22s var(--ease-spring);
+}
+
+/* marker colours alternate like the dots of the sidebar's category list */
+.fp-stacknav__list li:nth-child(4n+2)::before { background: var(--blue); }
+.fp-stacknav__list li:nth-child(4n+3)::before { background: var(--orange); }
+.fp-stacknav__list li:nth-child(4n+4)::before { background: var(--violet); }
+
+.fp-stacknav__list li:hover::before,
+.fp-stacknav__list li:focus-within::before {
+  transform: rotate(5deg) scale(1.24);
+}
+
+/* Titles are highlighted like the links in prose: a faint stroke at rest and
+   a second pass on hover (_global/marker-swipe.styl). Colour and weight come
+   from the prose link rule in _page/article.styl. Hovering one flips its
+   cover to the top (main.js). */
+.fp-stacknav__link {
+  min-width: 0;
+}
+
+@media (max-width: 480px) {
+  .fp-stacknav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    /* room for the lower cards of the pile, which hang below the deck's box */
+    gap: 28px;
+  }
+
+  .fp-stack--nav {
+    width: 160px;
+    max-width: 100%;
+  }
+
+  .article-content .fp-stacknav__list {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .article-content .fp-stacknav__list li {
+    justify-content: center;
+  }
+
+  .fp-stacknav__link {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The deck still reorders on click, it just does so without the travel. */
+  .fp-stack.is-stacked.is-ready .fp-stack__card,
+  .fp-stack.is-stacked .fp-stack__card.is-taking,
+  .fp-stack.is-stacked.is-ready .fp-stack__img,
+  .fp-stack.is-stacked .fp-stack__card.is-taking .fp-stack__img,
+  .fp-stacknav__list li::before {
+    transition: none;
+  }
+}

@@ -1,0 +1,23 @@
+/* ============== PAGER ============== */
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+/* Link look comes from _global/arrow-link.styl. */
+.pager-link.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  color: var(--muted);
+}
+
+.pager-pages {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
