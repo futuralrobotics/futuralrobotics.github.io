@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # ✅ 关键：允许 bot 提交代码、push 分支
     steps:
       - uses: actions/checkout@v4
         with:
