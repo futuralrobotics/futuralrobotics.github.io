@@ -98,7 +98,7 @@ profile:
     path: /atom.xml
 
 welcome:
-  label: 今日份记录
+  label: ''
   title: 双擎科技
   text: 一站式医院全场景机器人解决方案服务商。
   cta_text: 开始阅读
