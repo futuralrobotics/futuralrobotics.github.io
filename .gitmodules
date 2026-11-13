@@ -1,6 +1,0 @@
-[submodule "themes/flatpaper"]
-	path = themes/flatpaper
-	url = ../../Homulilly/hexo-theme-flatpaper
-[submodule "themes/frutiger"]
-	path = themes/frutiger
-	url = ../../tud8951/hexo-theme-frutiger-aero.git

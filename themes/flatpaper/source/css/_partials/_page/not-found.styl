@@ -1,0 +1,69 @@
+/* ============== 404 PAGE ============== */
+.not-found-paper {
+  padding-bottom: 44px;
+  text-align: center;
+}
+
+.not-found-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 24px;
+}
+
+.not-found-code {
+  position: relative;
+  margin: 6px 0 0;
+  padding-bottom: 14px;
+  color: var(--color-accent-strong);
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  transform: rotate(-2deg);
+}
+
+/* a wavy pen line under the number, the way you would underline a mistake */
+.not-found-code::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 0;
+  height: 10px;
+  background-color: var(--color-accent);
+  opacity: 0.7;
+  -webkit-mask: var(--mask-wave) center / 40px 10px repeat-x;
+  mask: var(--mask-wave) center / 40px 10px repeat-x;
+}
+
+.dark-mode .not-found-code {
+  color: var(--color-accent-muted);
+}
+
+.not-found-lead {
+  max-width: 520px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.not-found-content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Button look comes from _global/paper-button.styl. */
+.not-found-action {
+  min-width: 128px;
+}
