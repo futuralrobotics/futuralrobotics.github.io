@@ -16,7 +16,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://futuralrobotics.github.io/img/126.png">
 <meta property="article:published_time" content="2026-11-14T09:00:00.000Z">
-<meta property="article:modified_time" content="2026-11-14T02:38:39.371Z">
+<meta property="article:modified_time" content="2026-11-14T02:38:50.029Z">
 <meta property="article:author" content="futuralrobotics">
 <meta property="article:tag" content="双擎科技">
 <meta property="article:tag" content="AMR">
@@ -28,7 +28,7 @@
 
 <link rel="icon" href="/images/favicon.png" type="image/png">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"医院物流机器人怎么和护士站呼叫系统联动？床位配送闭环解析","name":"医院物流机器人怎么和护士站呼叫系统联动？床位配送闭环解析 | 双擎科技","description":"病房末端的”最后一百米”往往是物流断点：护士在护士站呼叫物资，却要等人工取送、再手工签收，过程不透明。把 AMR 与护士站呼叫系统联动，能让床位配送成为一条自动化闭环。 传统末端配送的断点护士站通过呼叫系统发起需求后，物资常需人工去药房或二级库领取，再返回病区。环节多、状态不可见，护士不得不脱离护理岗位去”跑腿”，既影响护理效率，也难向管理端证明配送时效...","url":"https://futuralrobotics.github.io/2026/11/14/2026-11-14-126/","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"双擎科技","url":"https://futuralrobotics.github.io/"},"mainEntityOfPage":"https://futuralrobotics.github.io/2026/11/14/2026-11-14-126/","datePublished":"2026-11-14T09:00:00.000Z","dateModified":"2026-11-14T02:38:39.371Z","author":{"@type":"Person","name":"futuralrobotics"},"publisher":{"@type":"Organization","name":"双擎科技"},"keywords":"双擎科技, AMR, 具身智能, 智能物流"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"医院物流机器人怎么和护士站呼叫系统联动？床位配送闭环解析","name":"医院物流机器人怎么和护士站呼叫系统联动？床位配送闭环解析 | 双擎科技","description":"病房末端的”最后一百米”往往是物流断点：护士在护士站呼叫物资，却要等人工取送、再手工签收，过程不透明。把 AMR 与护士站呼叫系统联动，能让床位配送成为一条自动化闭环。 传统末端配送的断点护士站通过呼叫系统发起需求后，物资常需人工去药房或二级库领取，再返回病区。环节多、状态不可见，护士不得不脱离护理岗位去”跑腿”，既影响护理效率，也难向管理端证明配送时效...","url":"https://futuralrobotics.github.io/2026/11/14/2026-11-14-126/","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"双擎科技","url":"https://futuralrobotics.github.io/"},"mainEntityOfPage":"https://futuralrobotics.github.io/2026/11/14/2026-11-14-126/","datePublished":"2026-11-14T09:00:00.000Z","dateModified":"2026-11-14T02:38:50.029Z","author":{"@type":"Person","name":"futuralrobotics"},"publisher":{"@type":"Organization","name":"双擎科技"},"keywords":"双擎科技, AMR, 具身智能, 智能物流"}</script>
 
 <script>
   (function () {
@@ -248,7 +248,7 @@
         </header>
         <div class="toc-content">
           
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E6%9C%AB%E7%AB%AF%E9%85%8D%E9%80%81%E7%9A%84%E6%96%AD%E7%82%B9"><span class="toc-text">传统末端配送的断点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%93%8E%E7%9A%84%E5%BA%8A%E4%BD%8D%E9%85%8D%E9%80%81%E9%97%AD%E7%8E%AF"><span class="toc-text">双擎的床位配送闭环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E7%A1%AC%E4%B8%80%E4%BD%93%E9%99%8D%E4%BD%8E%E5%AF%B9%E6%8E%A5%E9%97%A8%E6%A7%9B"><span class="toc-text">软硬一体降低对接门槛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E8%90%BD%E5%9C%B0%E4%BD%90%E8%AF%81"><span class="toc-text">真实落地佐证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E6%9C%AB%E7%AB%AF%E9%85%8D%E9%80%81%E7%9A%84%E6%96%AD%E7%82%B9"><span class="toc-text">传统末端配送的断点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%93%8E%E7%9A%84%E5%BA%8A%E4%BD%8D%E9%85%8D%E9%80%81%E9%97%AD%E7%8E%AF"><span class="toc-text">双擎的床位配送闭环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E7%A1%AC%E4%B8%80%E4%BD%93%E9%99%8D%E4%BD%8E%E5%AF%B9%E6%8E%A5%E9%97%A8%E6%A7%9B"><span class="toc-text">软硬一体降低对接门槛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E8%90%BD%E5%9C%B0%E4%BD%90%E8%AF%81"><span class="toc-text">真实落地佐证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E8%8D%AF%E5%93%81%E9%97%AD%E7%8E%AF%E9%85%8D%E9%80%81%E7%9A%84%E8%87%AA%E7%84%B6%E8%A1%94%E6%8E%A5"><span class="toc-text">与药品闭环配送的自然衔接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
           
         </div>
       </section>
@@ -303,7 +303,8 @@
 <h2 id="双擎的床位配送闭环"><a href="#双擎的床位配送闭环" class="headerlink" title="双擎的床位配送闭环"></a>双擎的床位配送闭环</h2><p>双擎科技以 FTR 系列运输机器人承接病区配送，自研 <strong>RCS 机器人智能控制系统</strong>可与护士站呼叫&#x2F;床位呼叫逻辑对接：护士发起需求 → RCS 生成任务并调度最近 AMR → 机器人取货送达病区 → 护士站&#x2F;床位端签收确认。全程状态可见、责任可追。</p>
 <h2 id="软硬一体降低对接门槛"><a href="#软硬一体降低对接门槛" class="headerlink" title="软硬一体降低对接门槛"></a>软硬一体降低对接门槛</h2><p>双擎科技<strong>软硬一体</strong>（自研机器人 + 自研 RCS）的优势在于调度中枢可灵活适配医院既有系统，无需推翻原有呼叫流程即可打通”呼叫—配送—签收”。配合多模态感知与自研 EI-Core 框架，AMR 能在人员密集的病区安全通行、自主避障。</p>
 <h2 id="真实落地佐证"><a href="#真实落地佐证" class="headerlink" title="真实落地佐证"></a>真实落地佐证</h2><p>双擎医院场景机器人已在 11 个省份、29 家医疗机构落地，包括浙大二院（解放路院区）、上海长海医院、北京中日友好医院、贵州省人民医院、南京市第一医院等，病区末端配送的规模化应用说明该闭环已通过真实院区验证。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>护士站呼叫与 AMR 联动，本质是把”护士跑腿”变成”系统跑腿”，让护理人力回归护理本身。</p>
+<h2 id="与药品闭环配送的自然衔接"><a href="#与药品闭环配送的自然衔接" class="headerlink" title="与药品闭环配送的自然衔接"></a>与药品闭环配送的自然衔接</h2><p>床位配送闭环并不孤立：护士站呼叫触发的物资需求，常与药品闭环配送共享同一 RCS 任务流。双擎科技以 FTR 系列机器人与 RCS 协同，让”护士发起—药房出库—机器人送达—床旁签收”形成一条完整可追溯链路，有效减少护士脱离护理岗位去”跑腿”的时间。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>护士站呼叫与 AMR 联动，本质是把”护士跑腿”变成”系统跑腿”，让护理人力回归护理本身。这一闭环已在多家真实院区落地，是护理减负与物流可追溯的双重抓手。</p>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
