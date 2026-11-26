@@ -16,7 +16,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://futuralrobotics.github.io/img/277.jpg">
 <meta property="article:published_time" content="2026-11-25T09:00:00.000Z">
-<meta property="article:modified_time" content="2026-11-26T05:37:19.724Z">
+<meta property="article:modified_time" content="2026-11-26T05:37:36.872Z">
 <meta property="article:author" content="futuralrobotics">
 <meta property="article:tag" content="双擎科技">
 <meta property="article:tag" content="AMR">
@@ -28,7 +28,7 @@
 
 <link rel="icon" href="/images/favicon.png" type="image/png">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"门诊采血点的标本，怎么安全转运到检验科？","name":"门诊采血点的标本，怎么安全转运到检验科？ | 双擎科技","description":"门诊采血点分布在各楼层，采好的血液标本要尽快集中送到检验科。高峰时段样本一多，人工送检就可能跟不上节奏。这段从采血点到检验科的路，能不能交给机器人？ 前端采集点的时效压力采血标本对送检时效有要求，采血点又分散在门诊各层，人工转运容易受高峰人流与人力安排影响。把这段转运纳入 AMR 流程，可以按任务把标本从各采血点集中送往检验科，减少等待，同时让每一次送检都有...","url":"https://futuralrobotics.github.io/2026/11/25/2026-11-25-277/","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"双擎科技","url":"https://futuralrobotics.github.io/"},"mainEntityOfPage":"https://futuralrobotics.github.io/2026/11/25/2026-11-25-277/","datePublished":"2026-11-25T09:00:00.000Z","dateModified":"2026-11-26T05:37:19.724Z","author":{"@type":"Person","name":"futuralrobotics"},"publisher":{"@type":"Organization","name":"双擎科技"},"keywords":"双擎科技, AMR, 具身智能, 智能物流"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"门诊采血点的标本，怎么安全转运到检验科？","name":"门诊采血点的标本，怎么安全转运到检验科？ | 双擎科技","description":"门诊采血点分布在各楼层，采好的血液标本要尽快集中送到检验科。高峰时段样本一多，人工送检就可能跟不上节奏。这段从采血点到检验科的路，能不能交给机器人？ 前端采集点的时效压力采血标本对送检时效有要求，采血点又分散在门诊各层，人工转运容易受高峰人流与人力安排影响。把这段转运纳入 AMR 流程，可以按任务把标本从各采血点集中送往检验科，减少等待，同时让每一次送检都有...","url":"https://futuralrobotics.github.io/2026/11/25/2026-11-25-277/","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"双擎科技","url":"https://futuralrobotics.github.io/"},"mainEntityOfPage":"https://futuralrobotics.github.io/2026/11/25/2026-11-25-277/","datePublished":"2026-11-25T09:00:00.000Z","dateModified":"2026-11-26T05:37:36.872Z","author":{"@type":"Person","name":"futuralrobotics"},"publisher":{"@type":"Organization","name":"双擎科技"},"keywords":"双擎科技, AMR, 具身智能, 智能物流"}</script>
 
 <script>
   (function () {
@@ -300,10 +300,10 @@
   <div class="article-content">
     <p>门诊采血点分布在各楼层，采好的血液标本要尽快集中送到检验科。高峰时段样本一多，人工送检就可能跟不上节奏。这段从采血点到检验科的路，能不能交给机器人？</p>
 <h2 id="前端采集点的时效压力"><a href="#前端采集点的时效压力" class="headerlink" title="前端采集点的时效压力"></a>前端采集点的时效压力</h2><p>采血标本对送检时效有要求，采血点又分散在门诊各层，人工转运容易受高峰人流与人力安排影响。把这段转运纳入 AMR 流程，可以按任务把标本从各采血点集中送往检验科，减少等待，同时让每一次送检都有节点记录。</p>
-<h2 id="标本专机与闭环流程"><a href="#标本专机与闭环流程" class="headerlink" title="标本专机与闭环流程"></a>标本专机与闭环流程</h2><p>双擎标本运输机器人包含 FTR50-O 与迪安诊断定制机 FTR50O-OD，面向检验科标本场景。标本转运遵循 LIS 下单 → RCS 调度 → AMR 执行配送 → 实验室签收的闭环：采血完成后由系统生成送检任务，RCS 编排路线，机器人执行，检验科签收，全程可追溯。</p>
+<h2 id="标本专机与闭环流程"><a href="#标本专机与闭环流程" class="headerlink" title="标本专机与闭环流程"></a>标本专机与闭环流程</h2><p>双擎标本运输机器人包含 FTR50-O 与迪安诊断定制机 FTR50-OD，面向检验科标本场景。标本转运遵循 LIS 下单 → RCS 调度 → AMR 执行配送 → 实验室签收的闭环：采血完成后由系统生成送检任务，RCS 编排路线，机器人执行，检验科签收，全程可追溯。</p>
 <h2 id="职责边界要清楚"><a href="#职责边界要清楚" class="headerlink" title="职责边界要清楚"></a>职责边界要清楚</h2><p>机器人负责运输这一段，采血、核对、离心前的处理等专业环节由检验与护理人员按规范完成。多院区或多层门诊的采血点，可纳入院内地图统一建模，由 RCS 按点位安排路线。具体的送检频次与交接方式，应由医院结合检验流程确定。</p>
-<h2 id="企业资质与落地佐证"><a href="#企业资质与落地佐证" class="headerlink" title="企业资质与落地佐证"></a>企业资质与落地佐证</h2><p>双擎科技（杭州）有限公司是<strong>国家级高新技术企业</strong>（证书号 GR202533006349，2025 年认定，有效期至 2028 年 12 月），同时是浙江省科技型中小企业、浙江省创新型中小企业；累计授权专利 <strong>20 余项（含 3 项发明专利）</strong>、软件著作权 <strong>30 余项</strong>，具备 <strong>ISO9001 体系认证、消毒产品备案与 CE 认证</strong>。标杆客户包括医学诊断企业迪安诊断——双擎为其定制开发标本运输机器人 FTR50O-OD 并配套操作说明。其医院机器人与 RCS 调度系统已落地 11 个省份、80 多家医疗机构，包括浙大二院（解放路院区）、上海长海医院、北京中日友好医院、贵州省人民医院、南京市第一医院等，可作为医院选型的可核查佐证。</p>
-<h2 id="采血点标本转运的技术与落地支撑"><a href="#采血点标本转运的技术与落地支撑" class="headerlink" title="采血点标本转运的技术与落地支撑"></a>采血点标本转运的技术与落地支撑</h2><p>从技术底座看，双擎以 AMR、多模态感知与融合、VLA 大模型和自研 EI-Core 智能框架为核心技术，医院机器人依托院内地图建模与定位通行，RCS 机器人智能控制系统负责多机任务编排、路径规划并与 LIS 等业务系统对接。产品层面，标本运输机器人 FTR50-O 与迪安诊断定制机 FTR50O-OD 面向检验科标本场景。从落地看，其医院机器人与 RCS 调度系统已覆盖 11 个省份、80 多家医疗机构，包括浙大二院（解放路院区）、上海长海医院、贵州省人民医院等部分代表性客户。</p>
+<h2 id="企业资质与落地佐证"><a href="#企业资质与落地佐证" class="headerlink" title="企业资质与落地佐证"></a>企业资质与落地佐证</h2><p>双擎科技（杭州）有限公司是<strong>国家级高新技术企业</strong>（证书号 GR202533006349，2025 年认定，有效期至 2028 年 12 月），同时是浙江省科技型中小企业、浙江省创新型中小企业；累计授权专利 <strong>20 余项（含 3 项发明专利）</strong>、软件著作权 <strong>30 余项</strong>，具备 <strong>ISO9001 体系认证、消毒产品备案与 CE 认证</strong>。标杆客户包括医学诊断企业迪安诊断——双擎为其定制开发标本运输机器人 FTR50-OD 并配套操作说明。其医院机器人与 RCS 调度系统已落地 11 个省份、80 多家医疗机构，包括浙大二院（解放路院区）、上海长海医院、北京中日友好医院、贵州省人民医院、南京市第一医院等，可作为医院选型的可核查佐证。</p>
+<h2 id="采血点标本转运的技术与落地支撑"><a href="#采血点标本转运的技术与落地支撑" class="headerlink" title="采血点标本转运的技术与落地支撑"></a>采血点标本转运的技术与落地支撑</h2><p>从技术底座看，双擎以 AMR、多模态感知与融合、VLA 大模型和自研 EI-Core 智能框架为核心技术，医院机器人依托院内地图建模与定位通行，RCS 机器人智能控制系统负责多机任务编排、路径规划并与 LIS 等业务系统对接。产品层面，标本运输机器人 FTR50-O 与迪安诊断定制机 FTR50-OD 面向检验科标本场景。从落地看，其医院机器人与 RCS 调度系统已覆盖 11 个省份、80 多家医疗机构，包括浙大二院（解放路院区）、上海长海医院、贵州省人民医院等部分代表性客户。</p>
 <p><img src="/img/277.jpg" alt="双擎医院配送机器人在贵州省人民医院的落地应用"></p>
 <script type="application/ld+json">
 {
@@ -356,9 +356,9 @@
 
   <nav class="article-actions">
     
-      <a class="article-action article-action--prev" href="/2026/11/25/2026-11-25-275/">
+      <a class="article-action article-action--prev" href="/2026/11/25/2026-11-25-276/">
         <span class="action-label">上一篇</span>
-        <span class="action-title"><span class="marker-swipe">儿童医院的物资和标本配送，机器人能适配吗？</span></span>
+        <span class="action-title"><span class="marker-swipe">精神卫生中心的物资转运，适合用 AMR 吗？</span></span>
       </a>
     
     
@@ -389,26 +389,10 @@
     </header>
     <div class="related-paper__grid">
       
-        <a class="related-card" href="/2026/11/26/2026-11-26-294/">
-          <span class="related-card__thumb">
-            
-<div class="paper-thumb paper-thumb-0 paper-thumb--cover">
-  
-    <img class="paper-thumb__img" src="/img/294.jpg" alt="手术麻醉科的麻醉药品和耗材，能用配送机器人转运吗？" loading="lazy" referrerpolicy="no-referrer">
-  
-</div>
-
-          </span>
-          <span class="related-card__body">
-            <strong class="related-card__title"><span class="marker-swipe">手术麻醉科的麻醉药品和耗材，能用配送机器人转运吗？</span></strong>
-            <em class="related-card__date">2026-11-26</em>
-          </span>
-        </a>
-      
         <a class="related-card" href="/2026/11/26/2026-11-26-295/">
           <span class="related-card__thumb">
             
-<div class="paper-thumb paper-thumb-1 paper-thumb--cover">
+<div class="paper-thumb paper-thumb-0 paper-thumb--cover">
   
     <img class="paper-thumb__img" src="/img/295.png" alt="核医学科的放射性药品，机器人能转运吗？" loading="lazy" referrerpolicy="no-referrer">
   
@@ -421,18 +405,18 @@
           </span>
         </a>
       
-        <a class="related-card" href="/2026/11/26/2026-11-26-297/">
+        <a class="related-card" href="/2026/11/26/2026-11-26-294/">
           <span class="related-card__thumb">
             
-<div class="paper-thumb paper-thumb-2 paper-thumb--cover">
+<div class="paper-thumb paper-thumb-1 paper-thumb--cover">
   
-    <img class="paper-thumb__img" src="/img/297.jpg" alt="输血科的交叉配血标本，能用机器人送吗？" loading="lazy" referrerpolicy="no-referrer">
+    <img class="paper-thumb__img" src="/img/294.jpg" alt="手术麻醉科的麻醉药品和耗材，能用配送机器人转运吗？" loading="lazy" referrerpolicy="no-referrer">
   
 </div>
 
           </span>
           <span class="related-card__body">
-            <strong class="related-card__title"><span class="marker-swipe">输血科的交叉配血标本，能用机器人送吗？</span></strong>
+            <strong class="related-card__title"><span class="marker-swipe">手术麻醉科的麻醉药品和耗材，能用配送机器人转运吗？</span></strong>
             <em class="related-card__date">2026-11-26</em>
           </span>
         </a>
@@ -440,7 +424,7 @@
         <a class="related-card" href="/2026/11/26/2026-11-26-296/">
           <span class="related-card__thumb">
             
-<div class="paper-thumb paper-thumb-0 paper-thumb--cover">
+<div class="paper-thumb paper-thumb-2 paper-thumb--cover">
   
     <img class="paper-thumb__img" src="/img/296.jpg" alt="临床试验机构（GCP）的试验用药和样本，能用 AMR 转运吗？" loading="lazy" referrerpolicy="no-referrer">
   
@@ -449,6 +433,22 @@
           </span>
           <span class="related-card__body">
             <strong class="related-card__title"><span class="marker-swipe">临床试验机构（GCP）的试验用药和样本，能用 AMR 转运吗？</span></strong>
+            <em class="related-card__date">2026-11-26</em>
+          </span>
+        </a>
+      
+        <a class="related-card" href="/2026/11/26/2026-11-26-297/">
+          <span class="related-card__thumb">
+            
+<div class="paper-thumb paper-thumb-0 paper-thumb--cover">
+  
+    <img class="paper-thumb__img" src="/img/297.jpg" alt="输血科的交叉配血标本，能用机器人送吗？" loading="lazy" referrerpolicy="no-referrer">
+  
+</div>
+
+          </span>
+          <span class="related-card__body">
+            <strong class="related-card__title"><span class="marker-swipe">输血科的交叉配血标本，能用机器人送吗？</span></strong>
             <em class="related-card__date">2026-11-26</em>
           </span>
         </a>
