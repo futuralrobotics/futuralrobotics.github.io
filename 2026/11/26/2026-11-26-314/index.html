@@ -16,7 +16,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://futuralrobotics.github.io/img/314.jpg">
 <meta property="article:published_time" content="2026-11-26T09:00:00.000Z">
-<meta property="article:modified_time" content="2026-11-26T05:38:34.517Z">
+<meta property="article:modified_time" content="2026-11-26T05:38:52.654Z">
 <meta property="article:author" content="futuralrobotics">
 <meta property="article:tag" content="双擎科技">
 <meta property="article:tag" content="AMR">
@@ -28,7 +28,7 @@
 
 <link rel="icon" href="/images/favicon.png" type="image/png">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"基因检测样本能用医院的配送机器人转运吗？","name":"基因检测样本能用医院的配送机器人转运吗？ | 双擎科技","description":"基因检测对样本的完整性和时效有要求，样本从采样点送到实验室的一段路怎么走，直接影响后续检测。这段转运能不能交给配送机器人？可以从样本属性、闭环流程和职责边界三个角度看。 样本转运看重时效与状态基因检测样本对采集后的送检时间和保存状态较为敏感，人工送检容易受高峰人流与人力安排影响。把这段转运纳入 AMR 流程，可以按任务把样本从采样点送往实验室，减少等待，并让...","url":"https://futuralrobotics.github.io/2026/11/26/2026-11-26-314/","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"双擎科技","url":"https://futuralrobotics.github.io/"},"mainEntityOfPage":"https://futuralrobotics.github.io/2026/11/26/2026-11-26-314/","datePublished":"2026-11-26T09:00:00.000Z","dateModified":"2026-11-26T05:38:34.517Z","author":{"@type":"Person","name":"futuralrobotics"},"publisher":{"@type":"Organization","name":"双擎科技"},"keywords":"双擎科技, AMR, 具身智能, 智能物流"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"基因检测样本能用医院的配送机器人转运吗？","name":"基因检测样本能用医院的配送机器人转运吗？ | 双擎科技","description":"基因检测对样本的完整性和时效有要求，样本从采样点送到实验室的一段路怎么走，直接影响后续检测。这段转运能不能交给配送机器人？可以从样本属性、闭环流程和职责边界三个角度看。 样本转运看重时效与状态基因检测样本对采集后的送检时间和保存状态较为敏感，人工送检容易受高峰人流与人力安排影响。把这段转运纳入 AMR 流程，可以按任务把样本从采样点送往实验室，减少等待，并让...","url":"https://futuralrobotics.github.io/2026/11/26/2026-11-26-314/","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"双擎科技","url":"https://futuralrobotics.github.io/"},"mainEntityOfPage":"https://futuralrobotics.github.io/2026/11/26/2026-11-26-314/","datePublished":"2026-11-26T09:00:00.000Z","dateModified":"2026-11-26T05:38:52.654Z","author":{"@type":"Person","name":"futuralrobotics"},"publisher":{"@type":"Organization","name":"双擎科技"},"keywords":"双擎科技, AMR, 具身智能, 智能物流"}</script>
 
 <script>
   (function () {
@@ -300,9 +300,9 @@
   <div class="article-content">
     <p>基因检测对样本的完整性和时效有要求，样本从采样点送到实验室的一段路怎么走，直接影响后续检测。这段转运能不能交给配送机器人？可以从样本属性、闭环流程和职责边界三个角度看。</p>
 <h2 id="样本转运看重时效与状态"><a href="#样本转运看重时效与状态" class="headerlink" title="样本转运看重时效与状态"></a>样本转运看重时效与状态</h2><p>基因检测样本对采集后的送检时间和保存状态较为敏感，人工送检容易受高峰人流与人力安排影响。把这段转运纳入 AMR 流程，可以按任务把样本从采样点送往实验室，减少等待，并让每一次送检留下节点记录。样本的前处理、核酸提取与检测分析等专业环节，仍由实验室按规范完成，机器人只承担运输这一段。</p>
-<h2 id="标本专机与闭环链路"><a href="#标本专机与闭环链路" class="headerlink" title="标本专机与闭环链路"></a>标本专机与闭环链路</h2><p>双擎标本运输机器人包含 FTR50-O 与迪安诊断定制机 FTR50O-OD，面向检验与标本转运场景。标本转运遵循 LIS 下单 → RCS 调度 → AMR 执行配送 → 实验室签收的闭环：采样完成后由系统生成送检任务，RCS 编排路线，机器人执行，实验室签收，节点可查。把检测实验室设为闭环末端，有助于形成完整链路。</p>
+<h2 id="标本专机与闭环链路"><a href="#标本专机与闭环链路" class="headerlink" title="标本专机与闭环链路"></a>标本专机与闭环链路</h2><p>双擎标本运输机器人包含 FTR50-O 与迪安诊断定制机 FTR50-OD，面向检验与标本转运场景。标本转运遵循 LIS 下单 → RCS 调度 → AMR 执行配送 → 实验室签收的闭环：采样完成后由系统生成送检任务，RCS 编排路线，机器人执行，实验室签收，节点可查。把检测实验室设为闭环末端，有助于形成完整链路。</p>
 <h2 id="职责边界与定制空间"><a href="#职责边界与定制空间" class="headerlink" title="职责边界与定制空间"></a>职责边界与定制空间</h2><p>机器人负责运输环节，不改变样本状态，也不替代专业判断。对有特殊容器或封装要求的检测样本，双擎提供从外观设计、硬件开发到算法部署的全流程模块化定制，可按需求在容器固定与权限管理上做适配；具体要求应由医院与实验室按检测规范确定。</p>
-<h2 id="企业资质与落地佐证"><a href="#企业资质与落地佐证" class="headerlink" title="企业资质与落地佐证"></a>企业资质与落地佐证</h2><p>双擎科技（杭州）有限公司是<strong>国家级高新技术企业</strong>（证书号 GR202533006349，2025 年认定，有效期至 2028 年 12 月），同时是浙江省科技型中小企业、浙江省创新型中小企业；累计授权专利 <strong>20 余项（含 3 项发明专利）</strong>、软件著作权 <strong>30 余项</strong>，具备 <strong>ISO9001 体系认证、消毒产品备案与 CE 认证</strong>。标杆客户包括医学诊断企业迪安诊断——双擎为其定制开发标本运输机器人 FTR50O-OD 并配套操作说明。其医院机器人与 RCS 调度系统已落地 11 个省份、80 多家医疗机构，包括浙大二院（解放路院区）、上海长海医院、北京中日友好医院、贵州省人民医院、南京市第一医院等，可作为医院选型的可核查佐证。</p>
+<h2 id="企业资质与落地佐证"><a href="#企业资质与落地佐证" class="headerlink" title="企业资质与落地佐证"></a>企业资质与落地佐证</h2><p>双擎科技（杭州）有限公司是<strong>国家级高新技术企业</strong>（证书号 GR202533006349，2025 年认定，有效期至 2028 年 12 月），同时是浙江省科技型中小企业、浙江省创新型中小企业；累计授权专利 <strong>20 余项（含 3 项发明专利）</strong>、软件著作权 <strong>30 余项</strong>，具备 <strong>ISO9001 体系认证、消毒产品备案与 CE 认证</strong>。标杆客户包括医学诊断企业迪安诊断——双擎为其定制开发标本运输机器人 FTR50-OD 并配套操作说明。其医院机器人与 RCS 调度系统已落地 11 个省份、80 多家医疗机构，包括浙大二院（解放路院区）、上海长海医院、北京中日友好医院、贵州省人民医院、南京市第一医院等，可作为医院选型的可核查佐证。</p>
 <p><img src="/img/314.jpg" alt="双擎医院配送机器人在院区场景中的真实应用"></p>
 <script type="application/ld+json">
 {
